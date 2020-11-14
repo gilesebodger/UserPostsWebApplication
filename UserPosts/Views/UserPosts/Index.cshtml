@@ -2,6 +2,36 @@
 @{
     ViewData["Title"] = "Index";
 }
+@model UserPosts.Site.Models.UserPostsDataViewModel
+@{
+    var title = "Alert Detail";
+    ViewData["Title"] = title;
+}
 
 <h1>Index</h1>
 
+<div class="container-fluid">
+
+
+        <table class="table" id="allExperimentTable">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>UserName</th>
+                    <th>PostCount</th>
+                    <th>...</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.NameUserNamePosts)
+                {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.UserName</td>
+                    <td>@item.PostCount</td>
+                    <td><a asp-controller="UserPosts" asp-action="Detail" asp-route-Id="@item.UserId">View Details</a></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+</div>

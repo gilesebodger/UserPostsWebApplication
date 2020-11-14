@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using UserPosts.Implentation.Services;
+using UserPosts.Site.Models;
 
 namespace UserPosts.Site.Controllers
 {
@@ -19,9 +20,44 @@ namespace UserPosts.Site.Controllers
         //[Route("userposts")]
         public async Task<IActionResult> Index()
         {
-            var users = await _userPostsService.GetUserPosts();
+            var userPosts = await _userPostsService.GetUserPosts();
+            var modelData = new List<UserPostsData>();
+            foreach (var item in userPosts)
+            {
+                modelData.Add(
+                    new UserPostsData(
+                        item.User.Id,
+                        item.User.Name,
+                        item.User.UserName,
+                        item.Posts.Count()
+                        )
+                    );
+            }
 
-            return View();
+            var viewModel = new UserPostsDataViewModel(modelData);
+
+            return View(viewModel);
+        }
+
+        public async Task<IActionResult> AllUsers()
+        {
+            var userPosts = await _userPostsService.GetUserPosts();
+            var modelData = new List<UserPostsData>();
+            foreach (var item in userPosts)
+            {
+                modelData.Add(
+                    new UserPostsData(
+                        item.User.Id,
+                        item.User.Name, 
+                        item.User.UserName, 
+                        item.Posts.Count()
+                        )
+                    );
+            }
+
+            var viewModel = new UserPostsDataViewModel(modelData);
+
+            return View(viewModel);
         }
     }
 }
