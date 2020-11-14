@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserPosts", "UserPosts\UserPosts.csproj", "{59F24CCD-A69F-4D32-8D69-D3312E5EF97E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserPosts.Site", "UserPosts\UserPosts.Site.csproj", "{59F24CCD-A69F-4D32-8D69-D3312E5EF97E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserPosts.Implentation", "UserPosts.Implentation\UserPosts.Implentation.csproj", "{10CE39E3-5C11-4E3B-9A13-650026953C7A}"
 EndProject

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using UserPosts.Implentation.Repository;
+using UserPosts.Implentation.Services;
 
 namespace UserPosts
 {
@@ -24,7 +25,9 @@ namespace UserPosts
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddSingleton<IUserPostsRepository, UserPostsRepository>();
+
+            services.AddSingleton<IUserPostsService, UserPostsService>();
 
             services.AddControllersWithViews();
         }
@@ -53,7 +56,7 @@ namespace UserPosts
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=UserPosts}/{action=Index}/{id?}");
             });
 
         }

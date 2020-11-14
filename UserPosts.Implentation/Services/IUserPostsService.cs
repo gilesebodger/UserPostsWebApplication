@@ -4,12 +4,10 @@ using System.Text;
 using System.Threading.Tasks;
 using UserPosts.Implentation.Model;
 
-namespace UserPosts.Implentation.Repository
+namespace UserPosts.Implentation.Services
 {
-    public interface IUserRepository
+    public interface IUserPostsService
     {
-        Task<User> GetUser(int userId);
+        Task<IEnumerable<UserPostData>> GetUserPosts();
     }
-
-
 }

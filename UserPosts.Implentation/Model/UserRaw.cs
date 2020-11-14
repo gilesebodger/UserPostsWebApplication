@@ -6,7 +6,7 @@ using System.Text;
 namespace UserPosts.Implentation.Model
 {
     [DataContract]
-    public class User
+    public class UserRaw
     {
         [DataMember(Name ="id")]
         public int Id { get; set; }

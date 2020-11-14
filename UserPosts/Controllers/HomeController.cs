@@ -13,9 +13,9 @@ namespace UserPosts.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IUserRepository _userRepo;
+        private readonly IUserPostsRepository _userRepo;
 
-        public HomeController(ILogger<HomeController> logger, IUserRepository userRepo)
+        public HomeController(ILogger<HomeController> logger, IUserPostsRepository userRepo)
         {
             _logger = logger;
             _userRepo = userRepo;
@@ -24,6 +24,10 @@ namespace UserPosts.Controllers
         public async Task<IActionResult> Index()
         {
             var u = await _userRepo.GetUser(1);
+
+            var ps = await _userRepo.GetAllPosts();
+
+            var us = await _userRepo.GetAllUsers();
 
             return View();
         }
