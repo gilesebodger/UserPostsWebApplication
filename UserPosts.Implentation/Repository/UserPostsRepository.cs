@@ -22,34 +22,26 @@ namespace UserPosts.Implentation.Repository
             client.Dispose();
 
             return returnValue;
-
         }
+
+        public async Task<IEnumerable<PostRaw>> GetUserPosts(int userId)
+        {
+            var url = $"https://jsonplaceholder.typicode.com/users/{userId}/posts";
+            return await GetCollectionInternal<PostRaw>(url);
+        }
+
 
         public async Task<IEnumerable<UserRaw>> GetAllUsers()
         {
-            //var client = new HttpClient();
             var url = $"https://jsonplaceholder.typicode.com/users";
             return await GetCollectionInternal<UserRaw>(url);
-            //var result = await client.GetAsync(url);
-            //var jsonContent = await result.Content.ReadAsStringAsync();
-            //var returnValue = JsonConvert.DeserializeObject<IEnumerable<User>>(jsonContent);
-            //client.Dispose();
-
-            //return returnValue;
 
         }
 
         public async Task<IEnumerable<PostRaw>> GetAllPosts()
         {
-            //var client = new HttpClient();
             var url = $"https://jsonplaceholder.typicode.com/posts";
             return await GetCollectionInternal<PostRaw>(url);
-            //var result = await client.GetAsync(url);
-            //var jsonContent = await result.Content.ReadAsStringAsync();
-            //var returnValue = JsonConvert.DeserializeObject<IEnumerable<Post>>(jsonContent);
-            //client.Dispose();
-
-            //return returnValue;
         }
 
         private async Task<IEnumerable<T>> GetCollectionInternal<T>(string url)

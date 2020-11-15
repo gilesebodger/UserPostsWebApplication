@@ -8,6 +8,8 @@ namespace UserPosts.Implentation.Services
 {
     public interface IUserPostsService
     {
-        Task<IEnumerable<UserPostData>> GetUserPosts();
+        Task<IEnumerable<UserPostData>> GetUserAndPostCounts();
+
+        Task<UserPostData> GetSpecificUserPostData(int userId);
     }
 }

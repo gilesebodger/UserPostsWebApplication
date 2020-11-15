@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace UserPosts.Site.Models
 {
-    public class UserPostsDataViewModel
+    public class UserPostCountDataViewModel
     {
-        public IEnumerable<UserPostsData> NameUserNamePosts { get; set; }
+        public IEnumerable<UserPostCountData> NameUserNamePosts { get; set; }
 
-        public UserPostsDataViewModel(IEnumerable<UserPostsData> nameUserNamePosts)
+        public UserPostCountDataViewModel(IEnumerable<UserPostCountData> nameUserNamePosts)
         {
             NameUserNamePosts = nameUserNamePosts;
         }

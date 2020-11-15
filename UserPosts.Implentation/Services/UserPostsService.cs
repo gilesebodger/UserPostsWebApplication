@@ -17,7 +17,7 @@ namespace UserPosts.Implentation.Services
             _userPostsRepository = userPostsRepository;
         }
 
-        public async Task<IEnumerable<UserPostData>> GetUserPosts()
+        public async Task<IEnumerable<UserPostData>> GetUserAndPostCounts()
         {
             var users = await _userPostsRepository.GetAllUsers();
             var posts = await _userPostsRepository.GetAllPosts();
@@ -37,6 +37,14 @@ namespace UserPosts.Implentation.Services
 
             return returnValue;
 
+        }
+
+        public async Task<UserPostData> GetSpecificUserPostData(int userId)
+        {
+            var user = await _userPostsRepository.GetUser(userId);
+            var userPosts = await _userPostsRepository.GetUserPosts(userId);           
+
+            return new UserPostData(user, userPosts);
         }
     }
 }

@@ -2,18 +2,14 @@
 @{
     ViewData["Title"] = "Index";
 }
-@model UserPosts.Site.Models.UserPostsDataViewModel
+@model UserPosts.Site.Models.UserPostCountDataViewModel
 @{
     var title = "Alert Detail";
     ViewData["Title"] = title;
 }
 
-<h1>Index</h1>
-
-<div class="container-fluid">
-
-
-        <table class="table" id="allExperimentTable">
+<div class="row">
+        <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>User</th>
@@ -29,7 +25,7 @@
                     <td>@item.Name</td>
                     <td>@item.UserName</td>
                     <td>@item.PostCount</td>
-                    <td><a asp-controller="UserPosts" asp-action="Detail" asp-route-Id="@item.UserId">View Details</a></td>
+                    <td><a class="btn btn-outline-info" asp-controller="UserPosts" asp-action="Detail" asp-route-userId="@item.UserId">View Details</a></td>
                 </tr>
                 }
             </tbody>

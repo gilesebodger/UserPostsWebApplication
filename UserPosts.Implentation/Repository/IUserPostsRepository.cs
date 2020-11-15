@@ -9,6 +9,7 @@ namespace UserPosts.Implentation.Repository
     public interface IUserPostsRepository
     {
         Task<UserRaw> GetUser(int userId);
+        Task<IEnumerable<PostRaw>> GetUserPosts(int userId);
         Task<IEnumerable<PostRaw>> GetAllPosts();
         Task<IEnumerable<UserRaw>> GetAllUsers();
     }
