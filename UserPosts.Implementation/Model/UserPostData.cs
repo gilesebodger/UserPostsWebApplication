@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UserPosts.Implentation.Model
+namespace UserPosts.Implementation.Model
 {
     public class UserPostData
     {

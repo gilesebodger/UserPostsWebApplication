@@ -8,8 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using UserPosts.Implentation.Repository;
-using UserPosts.Implentation.Services;
+using UserPosts.Implementation.Repository;
+using UserPosts.Implementation.Services;
 
 namespace UserPosts
 {

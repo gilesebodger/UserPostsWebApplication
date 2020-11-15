@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using UserPosts.Implentation.Services;
+using UserPosts.Implementation.Services;
 using UserPosts.Site.Models;
 
 namespace UserPosts.Site.Controllers
@@ -44,22 +44,23 @@ namespace UserPosts.Site.Controllers
         public async Task<IActionResult> Detail(int userId)
         {
             var userPostData = await _userPostsService.GetSpecificUserPostData(userId);
-            var modelData = new UserPostDataViewModel();
-
-            modelData.Name = userPostData.User.Name;
-            modelData.UserName = userPostData.User.UserName;
-            modelData.UserId = userPostData.User.Id;
-            modelData.AddressStreet = userPostData.User.Address.Street;
-            modelData.AddressSuite = userPostData.User.Address.Suite;
-            modelData.AddressCity = userPostData.User.Address.City;
-            modelData.AddressZipcode = userPostData.User.Address.Zipcode;
-            modelData.AddressLat = userPostData.User.Address.Geo.Lat;
-            modelData.AddressLng = userPostData.User.Address.Geo.Lng;
-            modelData.Phone = userPostData.User.Phone;
-            modelData.Website = userPostData.User.Website;
-            modelData.CompanyName = userPostData.User.Company.Name;
-            modelData.CompanyCatchPhrase = userPostData.User.Company.CatchPhrase;
-            modelData.CompanyBs = userPostData.User.Company.BS;
+            var modelData = new UserPostDataViewModel
+            {
+                Name = userPostData.User.Name,
+                UserName = userPostData.User.UserName,
+                UserId = userPostData.User.Id,
+                AddressStreet = userPostData.User.Address.Street,
+                AddressSuite = userPostData.User.Address.Suite,
+                AddressCity = userPostData.User.Address.City,
+                AddressZipcode = userPostData.User.Address.Zipcode,
+                AddressLat = userPostData.User.Address.Geo.Lat,
+                AddressLng = userPostData.User.Address.Geo.Lng,
+                Phone = userPostData.User.Phone,
+                Website = userPostData.User.Website,
+                CompanyName = userPostData.User.Company.Name,
+                CompanyCatchPhrase = userPostData.User.Company.CatchPhrase,
+                CompanyBs = userPostData.User.Company.BS
+            };
 
             var postsViewModel = new List<PostViewModel>();
 

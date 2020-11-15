@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UserPosts.Implentation\UserPosts.Implentation.csproj" />
+    <ProjectReference Include="..\UserPosts.Implementation\UserPosts.Implementation.csproj" />
   </ItemGroup>
 
   <ItemGroup>

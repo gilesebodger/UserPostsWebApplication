@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using UserPosts.Implentation.Model;
+using UserPosts.Implementation.Model;
 
-namespace UserPosts.Implentation.Services
+namespace UserPosts.Implementation.Services
 {
     public interface IUserPostsService
     {

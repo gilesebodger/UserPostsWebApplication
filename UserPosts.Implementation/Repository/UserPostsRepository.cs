@@ -5,9 +5,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using UserPosts.Implentation.Model;
+using UserPosts.Implementation.Model;
 
-namespace UserPosts.Implentation.Repository
+namespace UserPosts.Implementation.Repository
 {
     public class UserPostsRepository : IUserPostsRepository
     {

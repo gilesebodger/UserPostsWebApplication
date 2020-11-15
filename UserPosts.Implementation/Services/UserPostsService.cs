@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using UserPosts.Implentation.Repository;
-using UserPosts.Implentation.Model;
+using UserPosts.Implementation.Repository;
+using UserPosts.Implementation.Model;
 using System.Linq;
 
-namespace UserPosts.Implentation.Services
+namespace UserPosts.Implementation.Services
 {
     public class UserPostsService : IUserPostsService
     {
