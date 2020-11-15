@@ -62,7 +62,7 @@ namespace UserPosts.Site.Tests
             var actual = service.GetUserAndPostCounts().Result;
             var expectedCount = 3;
 
-            // mocking the data call to get 2 users, check that the service assigns the correct number of
+            // mocking the data call to get 2 users and posts, check that the service assigns the correct number of
             // posts to the user with userId 1
             Assert.AreEqual(expectedCount, actual.Where(o => (o.User.Id == 1)).First().Posts.Count());            
         }
