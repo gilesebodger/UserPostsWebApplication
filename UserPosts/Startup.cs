@@ -26,7 +26,6 @@ namespace UserPosts
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IUserPostsRepository, UserPostsRepository>();
-
             services.AddSingleton<IUserPostsService, UserPostsService>();
 
             services.AddControllersWithViews();
